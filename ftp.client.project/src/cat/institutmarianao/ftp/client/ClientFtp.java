@@ -148,15 +148,15 @@ public class ClientFtp implements Runnable {
 	 * Gets the ip and port from the byte string and creates a data socket
 	 */
 	private void passiveService(String str) throws IOException {
-		byte[] adress = new byte[4];
+		byte[] address = new byte[4];
 		String[] strBytes = str.split(",");
 		for (int i = 0; i < 4; i++) {
-			adress[i] = (byte) Integer.parseInt(strBytes[i]);
+			address[i] = (byte) Integer.parseInt(strBytes[i]);
 		}
 		int port = Integer.parseInt(strBytes[4]) * 256;
 		port += Integer.parseInt(strBytes[5]);
 
-		createDataSocket(adress, port);
+		createDataSocket(address, port);
 	}
 
 	/*
